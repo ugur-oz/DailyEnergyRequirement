@@ -75,15 +75,15 @@
     </div>
     <div>
         <label>Age</label>
-        <input th:field="*{age}" placeholder="Enter your age"/>
+        <input type="number" th:object="${age}" placeholder="Enter your age" min="0">
     </div>
     <div>
-        <label>Height</label>
-        <input th:field="*{height}" placeholder="Enter your height in Cm"/>
+        <label>Height(cm)</label>
+        <input th:object="${height}" placeholder="Enter your height in Cm">
     </div>
     <div>
         <label>Weight</label>
-        <input th:field="*{weight}" placeholder="Enter your weight in Kg"/>
+        <input placeholder="Enter your weight in Kg" th:object="${weight}" >
     </div>
     <div>
         <button class="btn" type="submit">Calculate</button>
