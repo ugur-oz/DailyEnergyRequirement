@@ -11,6 +11,9 @@
     margin-top: 100px;
     background-color: #F5FDC6;
     }
+    .linke{
+    font-size: 18px;
+    margin-top:50px}
     .result{
     margin-top: 20px;}
     .form1{
@@ -61,8 +64,6 @@
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
-    }
-
 </style>
 <body>
 <p>Welcome Your Daily Basal Energy Requirement Calculator</p>
@@ -93,6 +94,8 @@
         <label>Your Daily Basal Energy Requirement(kcal)</label>
        <div> <td class="result" th:text="${resulttotal}"></td><label></label> </div>
     </div>
+
 </form>
+<div class="linke"><a href="https://en.wikipedia.org/wiki/Harris%E2%80%93Benedict_equation"  >What is Harris–Benedict equation ? <br /> Click this link to learn</a></div>
 </body>
 </html>
