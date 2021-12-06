@@ -11,17 +11,67 @@
     margin-top: 100px;
     background-color: #F5FDC6;
     }
+    .result{
+    margin-top: 20px;}
     .form1{
-    margin-top: 100px;}
+    margin-top: 100px;
+    background-color:pink;}
+    .btn{
+    margin-top: 20px;
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+    }
+
 </style>
 <body>
 <p>Welcome Your Daily Basal Energy Requirement Calculator</p>
-<p>Harris–Benedict equation</p>
+<p>(Harris–Benedict equation)</p>
 
 <form class="form1" th:object="${human}" method="post" action="output">
     <div>
-        <input type="radio" name="gender" th:field="*{male}" value="true"><label>Female</label>
-        <input type="radio" name="gender" th:field="*{male}" value="false"><label>Male</label>
+        <input type="radio" name="gender" th:field="*{male}" value="true"><label>Male</label>
+        <input type="radio" name="gender" th:field="*{male}" value="false"><label>Female</label>
     </div>
     <div>
         <label>Age</label>
@@ -29,21 +79,19 @@
     </div>
     <div>
         <label>Height</label>
-        <input th:field="*{height}" id="height" name="height" placeholder="Enter your height in Cm"/>
+        <input th:field="*{height}" placeholder="Enter your height in Cm"/>
     </div>
     <div>
         <label>Weight</label>
-        <input th:field="*{weight}" id="weight" name="weight" placeholder="Enter your weight in Kg"/>
+        <input th:field="*{weight}" placeholder="Enter your weight in Kg"/>
     </div>
     <div>
-        <button type="submit">Calculate</button>
-    </div>
-    <div>
-        <button type="reset">Reset</button>
+        <button class="btn" type="submit">Calculate</button>
+        <button class="btn" type="reset">Reset</button>
     </div>
     <div class="result">
-        <label>Your Daily Basal Energy Requirement</label>
-       <div> <td class="result" th:text="${resulttotal}"></td> </div>
+        <label>Your Daily Basal Energy Requirement(kcal)</label>
+       <div> <td class="result" th:text="${resulttotal}"></td><label></label> </div>
     </div>
 </form>
 </body>
