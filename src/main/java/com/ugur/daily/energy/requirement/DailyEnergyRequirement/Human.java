@@ -4,7 +4,7 @@ public class Human {
     int age;
     int height;
     double weight;
-    String gender;
+    boolean male;
 
     @Override
     public String toString() {
@@ -12,7 +12,7 @@ public class Human {
                 "age=" + age +
                 ", height=" + height +
                 ", weight=" + weight +
-                ", gender='" + gender + '\'' +
+                ", male=" + male +
                 '}';
     }
 
@@ -40,11 +40,11 @@ public class Human {
         this.weight = weight;
     }
 
-    public String getGender() {
-        return gender;
+    public boolean isMale() {
+        return male;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setMale(boolean male) {
+        this.male = male;
     }
 }

@@ -9,17 +9,23 @@
 <p>Harris–Benedict equation</p>
 
 <form th:object="${human}" method="post" action="output">
-    <label>Gender</label>
-        <input type="radio" name="gender" th:field="*{male}" value="true"><label>Male</label>
-        <input type="radio" name="gender" th:field="*{male}" value="false"><label>Female</label>
-    <label>Age</label>
-    <input th:field="*{age}" placeholder="Enter your age"/>
-    <label>Height</label>
-    <input th:field="*{height}" class="asdasd" id="height" name="height" placeholder="Enter your height in Cm"/>
-    <label>Weight</label>
-    <input th:field="*{weight}" class ="asdasd" id="weight" name="weight" placeholder="Enter your weight in Kg"/>
-    <button type="submit">Calculate</button>
+    <div></div>
+    <label>Geschlecht</label>
+    <input type="radio" name="gender" th:field="*{male}" value="true"><label>Männlich</label>
+    <input type="radio" name="gender" th:field="*{male}" value="false"><label>Weiblich</label>
+    </div>
+    <div><label>Age</label>
+        <input th:field="*{age}" placeholder="Enter your age"/>
+    </div>
+    <div><label>Height</label>
+        <input th:field="*{height}" class="asdasd" id="height" name="height"
+               placeholder="Enter your height in Cm"/></div>
+    <div><label>Weight</label>
+        <input th:field="*{weight}" class="asdasd" id="weight" name="weight"
+               placeholder="Enter your weight in Kg"/></div>
+    <div>
+        <button type="submit">Calculate</button>
+    </div>
 </form>
-
 </body>
 </html>

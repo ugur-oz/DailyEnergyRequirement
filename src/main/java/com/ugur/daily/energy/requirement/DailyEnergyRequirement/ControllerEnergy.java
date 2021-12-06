@@ -23,9 +23,8 @@ public class ControllerEnergy {
         double resultmale = 66.5 + (13.76 * human.getWeight() + (5.003 * human.getHeight()) - (6.755 * human.getAge()));
         double resultfemale = 655 + (9.563 * human.getWeight()) + (1.85 * human.getHeight()) - (4.676 * human.getAge());
         double resulttotal ;
-        model.addAttribute("gender", human.gender);
         System.out.println(human);
-        if (human.gender == "female" ) {
+        if (!human.male) {
             resulttotal = resultfemale;
         }else resulttotal = resultmale;
         model.addAttribute("resulttotal",resulttotal);
