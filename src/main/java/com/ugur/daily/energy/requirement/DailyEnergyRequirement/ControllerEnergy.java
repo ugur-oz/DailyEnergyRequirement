@@ -28,7 +28,7 @@ public class ControllerEnergy {
             resulttotal = resultfemale;
         }else resulttotal = resultmale;
         model.addAttribute("resulttotal",resulttotal);
-        return "output";
+        return "input";
     }
 
 }
