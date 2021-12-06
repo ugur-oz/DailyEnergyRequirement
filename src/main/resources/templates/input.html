@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <title>Welcome Your Daily Energy Requirement Calculator</title>
 </head>
+<style>
+    body{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
+    background-color: #F5FDC6;
+    }
+    .form1{
+    margin-top: 100px;}
+</style>
 <body>
 <p>Welcome Your Daily Basal Energy Requirement Calculator</p>
 <p>Harris–Benedict equation</p>
 
-<form th:object="${human}" method="post" action="output">
-    <div></div>
-    <label>Geschlecht</label>
-    <input type="radio" name="gender" th:field="*{male}" value="true"><label>Männlich</label>
-    <input type="radio" name="gender" th:field="*{male}" value="false"><label>Weiblich</label>
+<form class="form1" th:object="${human}" method="post" action="output">
+    <div>
+        <input type="radio" name="gender" th:field="*{male}" value="true"><label>Female</label>
+        <input type="radio" name="gender" th:field="*{male}" value="false"><label>Male</label>
     </div>
-    <div><label>Age</label>
+    <div>
+        <label>Age</label>
         <input th:field="*{age}" placeholder="Enter your age"/>
     </div>
-    <div><label>Height</label>
-        <input th:field="*{height}" class="asdasd" id="height" name="height"
-               placeholder="Enter your height in Cm"/></div>
-    <div><label>Weight</label>
-        <input th:field="*{weight}" class="asdasd" id="weight" name="weight"
-               placeholder="Enter your weight in Kg"/></div>
+    <div>
+        <label>Height</label>
+        <input th:field="*{height}" id="height" name="height" placeholder="Enter your height in Cm"/>
+    </div>
+    <div>
+        <label>Weight</label>
+        <input th:field="*{weight}" id="weight" name="weight" placeholder="Enter your weight in Kg"/>
+    </div>
     <div>
         <button type="submit">Calculate</button>
     </div>
+    <div>
+        <button type="reset">Reset</button>
+    </div>
+
 </form>
 </body>
 </html>
